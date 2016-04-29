@@ -1,5 +1,6 @@
 import numpy as np 
 import matplotlib.pyplot as plt
+from scipy.optimize import minimize
 
 # overly-simplified reservoir simulation
 # annual timestep, two point hedging
@@ -9,12 +10,13 @@ K = 975 # capacity, TAF
 D = 1800 # target yield, TAF
 a = 0.35
 b = 2.3 # cost function parameters
-h0 = 1400 # between 0 and D
-hf = 2600 # between D and K+D
+h0 = 1404.
+hf = 2700.
 
 # data setup
 Q = np.loadtxt('data/folsom-annual.csv', delimiter=',', skiprows=1, usecols=[1])
 T = len(Q)
+
 S = np.zeros(T)
 R = np.zeros(T)
 cost = np.zeros(T)
@@ -35,7 +37,7 @@ for t in range(1,T):
   else:
     R[t] = (D-h0)/(hf-h0)*(W-h0)+h0
 
-  shortage = max(D-R[t], 0)
+  shortage = D-R[t]
   cost[t] = a*shortage**b
 
 

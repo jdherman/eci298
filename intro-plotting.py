@@ -1,6 +1,8 @@
 import numpy as np 
 import matplotlib.pyplot as plt
 
+# plot historical storage for folsom, oroville, and shasta
+
 reservoirs = ['FOL', 'ORO', 'SHA']
 colors = ['steelblue', 'indianred', 'seagreen']
 
@@ -15,9 +17,10 @@ for i,r in enumerate(reservoirs):
   # outflow = data[:,2] # mean cfs per day
 
   plt.plot(storage, color=colors[i], linewidth=2)
-  plt.xlabel('Days since Oct 1 2000')
-  plt.ylabel('Storage (TAF)')
 
+
+plt.xlabel('Days since Oct 1 2000')
+plt.ylabel('Storage (TAF)')
 plt.legend(reservoirs)
 plt.show()
-# plt.savefig('whatever' + str(i) + '.pdf')
+# plt.savefig('whatever.pdf') # or .png

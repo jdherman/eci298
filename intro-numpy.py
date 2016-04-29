@@ -28,22 +28,28 @@ A = np.array([6, 3, 7, 4, 5])
 A2 = np.array([[6,3,7,4,5], [2,6,3,4,9]])
 
 # indexing [i,j]
-# print(A2[0,3])
+print(A2[0,3])
 
 # get a row (: means "all")
-# print(A2[0,:])
+print(A2[0,:])
 
 # # create a matrix of zeros
-# M = np.zeros((10,5))
-# M[0,:] = 4 
-# print(M)
+M = np.zeros((10,5))
+M[0,:] = 4 
+print(M)
 
 # what do you expect to happen?
-# print(A**A)
+print(L+L)
+print(A+A)
+
 
 M = np.ones((10000000,5))
 
-# print(M.sum())
+# use vectorized functions whenever you can,
+# e.g. this,
+print(M.sum())
+
+# , not this:
 # s = 0
 # for i in range(10000000):
 #   for j in range(5):

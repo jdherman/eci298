@@ -1,5 +1,0 @@
-Reservoir data from CDEC, 10/01/2008-09/30/2015
-
-Storage in TAF
-Elevation in ft
-Inflow/outflow in CFS
